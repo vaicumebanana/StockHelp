@@ -1,13 +1,57 @@
-<div class="engine-settings">
-  <h2>Configurações do Motor (Stockfish)</h2>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Assistente de Xadrez</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <div class="slider-container">
-    <label for="eloRange">Força (ELO): <span id="eloValue">1500</span></label>
-    <input type="range" id="eloRange" min="100" max="4000" step="100" value="1500" />
+  <!-- Estilos -->
+  <link rel="stylesheet" href="chessboard.css" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Scripts externos -->
+  <script src="chess.js"></script>
+  <script src="chessboard.js"></script>
+  <script src="stockfish.js"></script>
+</head>
+<body>
+  <h1>Assistente de Xadrez</h1>
+
+  <!-- Sliders -->
+  <div class="engine-settings">
+    <h2>Configurações do Motor (Stockfish)</h2>
+
+    <div class="slider-container">
+      <label for="eloRange">Força (ELO): <span id="eloValue">1500</span></label>
+      <input type="range" id="eloRange" min="100" max="4000" step="100" value="1500" />
+    </div>
+
+    <div class="slider-container">
+      <label for="depthRange">Profundidade: <span id="depthValue">10</span></label>
+      <input type="range" id="depthRange" min="1" max="25" step="1" value="10" />
+    </div>
   </div>
 
-  <div class="slider-container">
-    <label for="depthRange">Profundidade de Cálculo: <span id="depthValue">10</span></label>
-    <input type="range" id="depthRange" min="1" max="25" step="1" value="10" />
+  <!-- Tabuleiro -->
+  <div id="board" style="width: 400px; margin: auto;"></div>
+
+  <!-- Movimento manual -->
+  <div class="move-input">
+    <label for="move">Digite seu movimento (ex: e2e4):</label>
+    <input type="text" id="move" maxlength="5" placeholder="e2e4" />
+    <button onclick="makePlayerMove()">Mover</button>
+    <button onclick="engineMove()">Jogada do Stockfish</button>
   </div>
-</div>
+
+  <!-- Chat de ajuda -->
+  <div class="chat-box">
+    <h2>Assistente</h2>
+    <div id="chat"></div>
+    <input type="text" id="userMessage" placeholder="Pergunte algo (ex: como rocar?)" />
+    <button onclick="sendMessage()">Enviar</button>
+  </div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
