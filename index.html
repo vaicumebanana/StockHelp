@@ -5,14 +5,18 @@
   <title>Assistente de Xadrez</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Estilos -->
-  <link rel="stylesheet" href="chessboard.css" />
-  <link rel="stylesheet" href="style.css" />
+  <!-- Chessboard.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/dist/chessboard.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/dist/chessboard.min.js"></script>
 
-  <!-- Scripts externos -->
-  <script src="chess.js"></script>
-  <script src="chessboard.js"></script>
-  <script src="stockfish.js"></script>
+  <!-- Chess.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.12.0/chess.min.js"></script>
+
+  <!-- Stockfish.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/stockfish.js/10.0.2/stockfish.js"></script>
+
+  <!-- Seu CSS opcional -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <h1>Assistente de Xadrez</h1>
@@ -20,12 +24,10 @@
   <!-- Sliders -->
   <div class="engine-settings">
     <h2>Configurações do Motor (Stockfish)</h2>
-
     <div class="slider-container">
       <label for="eloRange">Força (ELO): <span id="eloValue">1500</span></label>
       <input type="range" id="eloRange" min="100" max="4000" step="100" value="1500" />
     </div>
-
     <div class="slider-container">
       <label for="depthRange">Profundidade: <span id="depthValue">10</span></label>
       <input type="range" id="depthRange" min="1" max="25" step="1" value="10" />
@@ -40,7 +42,7 @@
     <label for="move">Digite seu movimento (ex: e2e4):</label>
     <input type="text" id="move" maxlength="5" placeholder="e2e4" />
     <button onclick="makePlayerMove()">Mover</button>
-    <button onclick="engineMove()">Jogada do Stockfish</button>
+    <button onclick="engineMove()">Jogada da Engine</button>
   </div>
 
   <!-- Chat de ajuda -->
@@ -51,7 +53,7 @@
     <button onclick="sendMessage()">Enviar</button>
   </div>
 
-  <!-- Script -->
+  <!-- Seu script -->
   <script src="script.js"></script>
 </body>
 </html>
