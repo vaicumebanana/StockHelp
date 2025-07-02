@@ -1,26 +1,32 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f5f7fa;
   margin: 0;
   padding: 20px;
-  text-align: center;
   color: #333;
 }
 
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 h1 {
-  margin-top: 0;
-  color: #222;
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
 }
 
 h2 {
-  color: #444;
-  margin-bottom: 10px;
+  color: #34495e;
+  margin-bottom: 15px;
+  font-size: 1.2em;
 }
 
 #board {
   margin: 20px auto;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 .engine-settings,
@@ -28,11 +34,10 @@ h2 {
 .chat-box {
   background: #ffffff;
   margin: 20px auto;
-  padding: 15px 20px;
+  padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   max-width: 500px;
-  text-align: left;
 }
 
 .slider-container {
@@ -41,61 +46,76 @@ h2 {
 
 .slider-container label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   font-weight: 500;
 }
 
 input[type="range"] {
   width: 100%;
+  margin-bottom: 10px;
 }
 
 input[type="text"] {
-  width: calc(100% - 20px);
-  padding: 8px;
-  margin-top: 8px;
-  border: 1px solid #ccc;
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
   border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 button {
   padding: 10px 15px;
-  margin-top: 10px;
-  margin-right: 5px;
   border: none;
-  background: #007acc;
+  background: #3498db;
   color: white;
   font-weight: bold;
   border-radius: 4px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background 0.2s;
+  flex: 1;
 }
 
 button:hover {
-  background: #005fa3;
+  background: #2980b9;
 }
 
-.chat-box input[type="text"] {
-  width: 100%;
-  margin-bottom: 10px;
+#resetBtn {
+  background: #e74c3c;
+}
+
+#resetBtn:hover {
+  background: #c0392b;
+}
+
+.chat-box {
+  margin-top: 30px;
 }
 
 #chat {
-  background-color: #f0f0f0;
-  padding: 10px;
-  height: 180px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  height: 200px;
   overflow-y: auto;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 5px;
+  margin-bottom: 15px;
   font-size: 14px;
-  margin-bottom: 10px;
 }
 
 #chat div {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  line-height: 1.4;
 }
 
-strong {
-  color: #333;
+#chat div strong {
+  color: #2c3e50;
 }
 
 @media screen and (max-width: 600px) {
@@ -107,11 +127,10 @@ strong {
   .move-input,
   .chat-box {
     width: 90%;
-    padding: 10px;
+    padding: 15px;
   }
 
-  button {
-    width: 100%;
-    margin: 5px 0;
+  .buttons {
+    flex-direction: column;
   }
 }
